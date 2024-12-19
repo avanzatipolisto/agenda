@@ -1,0 +1,11 @@
+-Conectar y desconectar la base de datos en cada petición
+-contraseña encriptada
+-Pasa a las vista de actualizar y eleminar las variables cuando se rechazan
+-Intenta que funcione en render, mira porque no funciona el contenedro cuando descomentas en data.database mysqlClient=MysqlClient() en render
+-documentar funciones
+-¿paginación?
+-¿Cambiar el usuario para que tengo dni, fecha de nacimiento y dirección y ponerle validaciones?
+
+¿MVC?
+-Trabajar con la clase usuario, deportes,¿etc?
+-modelo¿heredar de la clase model?, vista, controlador
