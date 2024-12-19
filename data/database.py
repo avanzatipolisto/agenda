@@ -6,8 +6,8 @@ class Database:
     database_engine_sqlite="sqlite"
 
     def __init__(self):
-        self.mysqlClient =  MysqlClient()
-        #self.mysqlClient =  None
+        #self.mysqlClient =  MysqlClient()
+        self.mysqlClient =  None
         self.sqliteClient = SqliteClient()
         self.database_engine_name_current="sqlite"
     def connect(self):

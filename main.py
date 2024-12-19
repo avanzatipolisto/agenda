@@ -13,7 +13,7 @@ app = MainFlask.getFlask()
 database:Database= MainFlask.get_database()
 
 # Puedes utilizar la base de datos de tipo mysql con la siguiente instrucción
-database.set_database_engine_name_current(database.database_engine_mysql)
+#database.set_database_engine_name_current(database.database_engine_mysql)
 
 @app.before_request
 def before_request_func():

@@ -2,6 +2,10 @@
 
 Agenda es el proyecto final del curso de desarrollo visualización de datos con Python, tiene como objetivos:
 
+github: https://github.com/avanzatipolisto/agenda
+
+render: https://agenda-61wo.onrender.com
+
 ## Integración de Base de Datos: Utilizar una base de datos para almacenar yngestionar datos de forma estructurada.
 
 <img src="docs/esquema.png" width="400px"></img>
