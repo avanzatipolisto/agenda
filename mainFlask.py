@@ -1,6 +1,6 @@
 from flask import Flask
 from data.database import Database
-import os
+from pathlib import Path
 class MainFlask:
     """
     Clase donde se inicializa flask y la base de datos
@@ -19,11 +19,12 @@ class MainFlask:
         """
         if cls.app is None:
             #static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
-            static_folder ='static'
+            static_folder =THIS_FOLDER+"/"+'static'
             #template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
-            template_folder ='templates'
+            template_folder = THIS_FOLDER+"/"+'templates'
             print("la ruta de los archivos estaticos es: ", static_folder)
-            cls.app = Flask('__main__', static_folder=static_folder, template_folder=template_folder)
+            THIS_FOLDER = Path(__file__).parent.resolve()
+            cls.app = Flask('__main__', static_folder=static_folder,template_folder=template_folder)
             #cls.app = Flask('__main__')
             cls.app.secret_key = "mi secret key"
         return cls.app

@@ -26,7 +26,7 @@ def menu_admin():
     if 'nombre' not in session:
         if session["rol"] != "administrador":
             return redirect("/login")
-    return render_template("admin/menu-admin.html")
+    return render_template("admin/menu_admin.html")
 @app.route("/admin/settings")
 def menu_settings():
     """
