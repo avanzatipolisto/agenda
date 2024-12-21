@@ -18,6 +18,12 @@ class MainFlask:
             atributos estáticos
         """
         if cls.app is None:
+            #nada
+            #nada
+            #nada
+            #nada
+            #nada
+            #nada
             THIS_FOLDER = Path(__file__).parent.resolve()
             #static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
             static_folder =THIS_FOLDER+"/"+'static'
