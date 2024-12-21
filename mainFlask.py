@@ -26,9 +26,9 @@ class MainFlask:
             #nada
             THIS_FOLDER = Path(__file__).parent.resolve()
             #static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
-            static_folder =THIS_FOLDER+"/"+"static"
+            static_folder ="static"
             #template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
-            template_folder = THIS_FOLDER+"/"+"templates"
+            template_folder = "templates"
             print("la ruta de los archivos estaticos es: ", static_folder)
 
             cls.app = Flask('__main__', static_folder=static_folder,template_folder=template_folder)
