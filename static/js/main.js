@@ -68,7 +68,6 @@ async function enviar_peticion_post(url, data) {
     .catch(error => {
         console.error("Hubo un error con la solicitud:", error);
     });
-
 }
 
 //Esta forma es con fetch+async+await
