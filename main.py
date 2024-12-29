@@ -12,8 +12,8 @@ from flask_cors import CORS, cross_origin
 # La app y la base de datos está inicializada en una clase de tipo 
 # singleton para poder usarlas en otros archivos
 app = MainFlask.getFlask()
-CORS(app)
-#cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+#CORS(app)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 database:Database= MainFlask.get_database()
 
 # Puedes utilizar la base de datos de tipo mysql con la siguiente instrucción
