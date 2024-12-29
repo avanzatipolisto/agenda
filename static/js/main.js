@@ -48,7 +48,7 @@ async function enviar_peticion_post(url, data) {
     }
 }
 
-
+/*
 async function marcar_checkbox_deportes_asignados_usuario () {
     var nombre_usuario=document.getElementById("nombre_usuario").value;
     const deportes_usuario = {
@@ -66,16 +66,14 @@ async function marcar_checkbox_deportes_asignados_usuario () {
             },
             body: JSON.stringify(deportes_usuario), // Convierte el objeto a una cadena JSON
         });
-        
-       //A través de GET
-       /*
-        const response = await fetch(ruta_base + "api/obtener_deportes_usuario?nombre_usuario="+nombre_usuario, {
-            method: "GET",
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            }
-        });*/
+        //A través de GET
+        //const response = await fetch(ruta_base + "api/obtener_deportes_usuario?nombre_usuario="+nombre_usuario, {
+        //    method: "GET",
+        //    headers: {
+        //        'Content-Type': 'application/json',
+        //        'Access-Control-Allow-Origin': '*'
+        //    }
+        //});
         // Verifica si la respuesta fue exitosa
         if (response.ok) {
             const results = await response.json(); // Convierte la respuesta a JSON            
@@ -95,5 +93,30 @@ async function marcar_checkbox_deportes_asignados_usuario () {
     } catch (error) {
         console.error("Hubo un error con la solicitud:", error);
     }
+}
+*/
+async function marcar_checkbox_deportes_asignados_usuario () {
+    var nombre_usuario=document.getElementById("nombre_usuario").value;
+    const deportes_usuario = {
+        nombre_usuario: nombre_usuario
+    };
 
+    //Obtenemos todos los deportes de un usuario
+    axios.get(ruta_base + "api/obtener_deportes_usuario?nombre_usuario="+nombre_usuario)
+    //Con axios trabajamos con promesas
+    .then(response => {
+        console.log("obtenidos los deportes de un usuario:", response.data);
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        for(let i=0; i<response.data.length; i++){
+            var result=response.data[i];
+            checkboxes.forEach(checkbox => {
+                if (checkbox.id==result[0]){
+                    checkbox.checked = true;
+                }
+            });
+        }
+    })
+    .catch(error => {
+        console.error("Hubo un error con la solicitud:", error);
+    });
 }
