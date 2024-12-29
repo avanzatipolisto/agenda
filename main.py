@@ -400,7 +400,7 @@ def delete_deporte_usuario():
     return response
 
 @app.route("/api/obtener_deportes_usuario", methods = ["POST", "GET"])
-#@cross_origin()
+@cross_origin()
 def obtener_deportes_usuario():
     request_data = request.get_json()
     if request.method == "POST":
