@@ -11,7 +11,7 @@ window.onload = function () {
  Existen 3 formas de hacer peticiones GET, POST; PUT y DELETE sin tener que recgargar la página
  1. Con el objeto XMLHttpRequest
  2 COn la aAPI fecth. con el objeto https://developer.mozilla.org/es/docs/Web/API/fetch
- 3 Utilizando una librería externa, en nuestro caso utilizamos axios: https://axios-http.com/docs/intro
+ 3 Utilizando una librería externa, en nuestro caso utilizamos axios: https://axios-http.com/docs/intro, axios trabaja con promesas o .then(reponse...)
  */
 
 

@@ -256,7 +256,7 @@ def form_logout():
 #####################################################################
 @app.route("/menu_usuario")
 @app.route("/menu_usuario/<int:anio_actual>/<int:mes_actual>")
-@cross_origin()
+#@cross_origin()
 def menu_usuario(anio_actual=-1, mes_actual=-1):
 #def menu_usuario():
     if "nombre" not in session:
