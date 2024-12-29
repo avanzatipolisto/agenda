@@ -7,6 +7,14 @@ window.onload = function () {
     marcar_checkbox_deportes_asignados_usuario();
 }
 
+/**
+ Existen 3 formas de hacer peticiones GET, POST; PUT y DELETE sin tener que recgargar la página
+ 1. Con el objeto XMLHttpRequest
+ 2 COn la aAPI fecth. con el objeto https://developer.mozilla.org/es/docs/Web/API/fetch
+ 3 Utilizando una librería externa, en nuestro caso utilizamos axios: https://axios-http.com/docs/intro
+ */
+
+
 
 function checkbox_deporte_click(checkbox) {
     var id_checkbox=checkbox.id;
@@ -25,6 +33,8 @@ function checkbox_deporte_click(checkbox) {
     }
 }
 
+//Esta forma es utilizando fetch+async+await
+/*
 async function enviar_peticion_post(url, data) {
     try {
         const response = await fetch(url, {
@@ -47,7 +57,21 @@ async function enviar_peticion_post(url, data) {
         console.error("Hubo un error con la solicitud:", error);
     }
 }
+*/
+// Esta es la forma sin utilizar axios
+async function enviar_peticion_post(url, data) {
+   axios.post(url, data)
+    .then(response => {
+        console.log("Actualizado con mínimo:", response.data);
+        document.location.reload();
+    })
+    .catch(error => {
+        console.error("Hubo un error con la solicitud:", error);
+    });
 
+}
+
+//Esta forma es con fetch+async+await
 /*
 async function marcar_checkbox_deportes_asignados_usuario () {
     var nombre_usuario=document.getElementById("nombre_usuario").value;
@@ -94,6 +118,8 @@ async function marcar_checkbox_deportes_asignados_usuario () {
     }
 }
 */
+
+//Esta forma es utilizando la librería axios
 async function marcar_checkbox_deportes_asignados_usuario () {
     var nombre_usuario=document.getElementById("nombre_usuario").value;
     const deportes_usuario = {
