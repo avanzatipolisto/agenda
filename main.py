@@ -13,7 +13,7 @@ ruta_base = "https://agenda-yk23.onrender.com:3000/"
 # singleton para poder usarlas en otros archivos
 app = MainFlask.getFlask()
 #CORS(app)
-cors = CORS(app, resources={r"/api/*": {"origins": {ruta_base}}}, supports_credentials=True)
+cors = CORS(app, resources={r"/api/*": {"origins": {ruta_base}}})
 database:Database= MainFlask.get_database()
 
 # Puedes utilizar la base de datos de tipo mysql con la siguiente instrucción
