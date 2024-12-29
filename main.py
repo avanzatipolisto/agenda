@@ -387,10 +387,14 @@ def delete_deporte_usuario():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
-@app.route("/api/obtener_deportes_usuario", methods = ["POST"])
+@app.route("/api/obtener_deportes_usuario", methods = ["POST", "GET"])
 #@cross_origin()
 def obtener_deportes_usuario():
     request_data = request.get_json()
+    if request.method == "POST":
+        request_data = request.get_json()
+    elif request.method == "GET":
+        request_data = request.args
     nombre_usuario = request_data['nombre_usuario']
 
     deportes_usuario=database.obtener_todos_los_deportes_por_nombre_de_usuario(nombre_usuario)
