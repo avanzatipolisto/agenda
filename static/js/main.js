@@ -54,7 +54,6 @@ async function marcar_checkbox_deportes_asignados_usuario () {
     const deportes_usuario = {
         nombre_usuario: nombre_usuario
     };
-
     //Obtenemos todos los deportes de un usuario
     try {
         //a través de post    
@@ -100,9 +99,8 @@ async function marcar_checkbox_deportes_asignados_usuario () {
     const deportes_usuario = {
         nombre_usuario: nombre_usuario
     };
-
     //Obtenemos todos los deportes de un usuario
-    axios.get(ruta_base + "api/obtener_deportes_usuario?nombre_usuario="+nombre_usuario)
+    axios.post(ruta_base + "api/obtener_deportes_usuario", deportes_usuario)
     //Con axios trabajamos con promesas
     .then(response => {
         console.log("obtenidos los deportes de un usuario:", response.data);
