@@ -1,5 +1,5 @@
-ruta_base = "https://127.0.0.1:3000/";
-//ruta_base = "https://agenda-vpgh.onrender.com:3000/";
+//ruta_base = "https://127.0.0.1:3000/";
+ruta_base = "https://agenda-yk23.onrender.com:3000/";
 //ruta_base = "https://agenda-alpha-gold.vercel.app:3000/";
 window.onload = function () {
     // Ocultamos los checkbox pagados si no está marcado el activado
