@@ -1,6 +1,7 @@
 ruta_base = "http://127.0.0.1:3000/";
 //ruta_base = "https://agenda-yk23.onrender.com:3000/";
 //ruta_base = "https://agenda-alpha-gold.vercel.app:3000/";
+const axios = require('axios').default;
 window.onload = function () {
     // Ocultamos los checkbox pagados si no está marcado el activado
     // Enl marcado de los checkbox asistenca es lo 1 que se ha hecho en php
