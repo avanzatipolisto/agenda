@@ -8,12 +8,12 @@ import datetime
 from utils.utils import *
 #pip install -U flask-cors: https://flask-cors.readthedocs.io/en/latest/
 from flask_cors import CORS, cross_origin
-
+ruta_base = "https://agenda-yk23.onrender.com:3000/"
 # La app y la base de datos está inicializada en una clase de tipo 
 # singleton para poder usarlas en otros archivos
 app = MainFlask.getFlask()
 #CORS(app)
-cors = CORS(app, resources={r"/api/*": {"origins": "https://agenda-yk23.onrender.com"}})
+cors = CORS(app, resources={r"/api/*": {"origins": {ruta_base}}}, supports_credentials=True)
 database:Database= MainFlask.get_database()
 
 # Puedes utilizar la base de datos de tipo mysql con la siguiente instrucción
@@ -340,7 +340,7 @@ def menu_usuario(anio_actual=-1, mes_actual=-1):
 #####################################################################
 #####################################################################
 @app.route("/api/obtener_todos")
-@cross_origin()
+#@cross_origin()
 def api_mostrar_todos():
     tuplas=database.obtener_todos_los_deportes()
     deportes=[]
@@ -348,14 +348,14 @@ def api_mostrar_todos():
         print(deporte)
         deportes.append(deporte[1])
     response=jsonify(deportes)
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Origin', ruta_base)
     return response
 
 
 
 #https://www.digitalocean.com/community/tutorials/processing-incoming-request-data-in-flask
 @app.route("/api/add_deporte_usuario", methods = ["POST", "GET"])
-@cross_origin()
+#@cross_origin()
 def add_deporte_usuario():
 
     if request.method == "POST":
@@ -374,11 +374,11 @@ def add_deporte_usuario():
 
     #print("El deportes_usuario es: ", deportes_usuario)
     response=jsonify(deportes_usuario)
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Origin', ruta_base)
     return response
 
 @app.route("/api/delete_deporte_usuario", methods = ["POST", "GET"])
-@cross_origin()
+#@cross_origin()
 def delete_deporte_usuario():
 
     if request.method == "POST":
@@ -396,11 +396,11 @@ def delete_deporte_usuario():
     deportes_usuario= database.obtener_deportes_usuario_por_id_usuario(id_usuario)
 
     response=jsonify(deportes_usuario)
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Origin', ruta_base)
     return response
 
 @app.route("/api/obtener_deportes_usuario", methods = ["POST", "GET"])
-@cross_origin()
+#@cross_origin()
 def obtener_deportes_usuario():
     request_data = request.get_json()
     if request.method == "POST":
@@ -412,7 +412,7 @@ def obtener_deportes_usuario():
     deportes_usuario=database.obtener_todos_los_deportes_por_nombre_de_usuario(nombre_usuario)
 
     response=jsonify(deportes_usuario)
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Origin', ruta_base)
     return response
 
 
