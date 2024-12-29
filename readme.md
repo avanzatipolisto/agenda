@@ -4,7 +4,7 @@ Agenda es el proyecto final del curso de desarrollo visualización de datos con 
 
 github: https://github.com/avanzatipolisto/agenda
 
-Puedes probarlos online en render: https://agenda-1-51kr.onrender.com
+Puedes probarlos online en render: https://agenda-ai2z.onrender.com
 
 ## Integración de Base de Datos: Utilizar una base de datos para almacenar yngestionar datos de forma estructurada.
 
