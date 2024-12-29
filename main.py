@@ -12,7 +12,7 @@ from flask_cors import CORS, cross_origin
 # La app y la base de datos está inicializada en una clase de tipo 
 # singleton para poder usarlas en otros archivos
 app = MainFlask.getFlask()
-#CORS(app)
+CORS(app)
 #cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 database:Database= MainFlask.get_database()
 
@@ -340,7 +340,7 @@ def menu_usuario(anio_actual=-1, mes_actual=-1):
 #####################################################################
 #####################################################################
 @app.route("/api/obtener_todos")
-@cross_origin()
+#@cross_origin()
 def api_mostrar_todos():
     tuplas=database.obtener_todos_los_deportes()
     deportes=[]
@@ -355,7 +355,7 @@ def api_mostrar_todos():
 
 #https://www.digitalocean.com/community/tutorials/processing-incoming-request-data-in-flask
 @app.route("/api/add_deporte_usuario", methods = ["POST", "GET"])
-@cross_origin()
+#@cross_origin()
 def add_deporte_usuario():
 
     if request.method == "POST":
@@ -378,7 +378,7 @@ def add_deporte_usuario():
     return response
 
 @app.route("/api/delete_deporte_usuario", methods = ["POST", "GET"])
-@cross_origin()
+#@cross_origin()
 def delete_deporte_usuario():
 
     if request.method == "POST":
@@ -400,7 +400,7 @@ def delete_deporte_usuario():
     return response
 
 @app.route("/api/obtener_deportes_usuario", methods = ["POST", "GET"])
-@cross_origin()
+#@cross_origin()
 def obtener_deportes_usuario():
     request_data = request.get_json()
     if request.method == "POST":
