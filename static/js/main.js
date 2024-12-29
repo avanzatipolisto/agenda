@@ -71,7 +71,13 @@ async function marcar_checkbox_deportes_asignados_usuario () {
         });
         */
        //A través de GET
-        const response = await fetch(ruta_base + "api/obtener_deportes_usuario?nombre_usuario="+nombre_usuario);
+        const response = await fetch(ruta_base + "api/obtener_deportes_usuario?nombre_usuario="+nombre_usuario, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        });
         // Verifica si la respuesta fue exitosa
         if (response.ok) {
             const results = await response.json(); // Convierte la respuesta a JSON            
