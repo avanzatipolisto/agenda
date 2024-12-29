@@ -7,7 +7,7 @@ import calendar
 import datetime
 from utils.utils import *
 #pip install -U flask-cors: https://flask-cors.readthedocs.io/en/latest/
-#from flask_cors import CORS, cross_origin
+from flask_cors import CORS, cross_origin
 
 # La app y la base de datos está inicializada en una clase de tipo 
 # singleton para poder usarlas en otros archivos
@@ -355,7 +355,7 @@ def api_mostrar_todos():
 
 #https://www.digitalocean.com/community/tutorials/processing-incoming-request-data-in-flask
 @app.route("/api/add_deporte_usuario", methods = ["POST"])
-#@cross_origin()
+@cross_origin()
 def add_deporte_usuario():
 
     if request.method == "POST":
