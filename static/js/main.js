@@ -1,5 +1,5 @@
-//ruta_base = "https://127.0.0.1:3000/";
-ruta_base = "https://agenda-yk23.onrender.com:3000/";
+ruta_base = "https://127.0.0.1:3000/";
+//ruta_base = "https://agenda-yk23.onrender.com:3000/";
 //ruta_base = "https://agenda-alpha-gold.vercel.app:3000/";
 window.onload = function () {
     // Ocultamos los checkbox pagados si no está marcado el activado
@@ -32,7 +32,8 @@ async function enviar_peticion_post(url, data) {
         const response = await fetch(url, {
             method: "POST", // Cambia a "PUT" si tu API lo requiere
             headers:  {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify(data), // Convierte el objeto a una cadena JSON
         });
@@ -61,7 +62,8 @@ async function marcar_checkbox_deportes_asignados_usuario () {
         const response = await fetch(ruta_base + "api/obtener_deportes_usuario", {
             method: "POST", // Cambia a "PUT" si tu API lo requiere
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify(deportes_usuario), // Convierte el objeto a una cadena JSON
         });
