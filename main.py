@@ -352,8 +352,6 @@ def api_mostrar_todos():
     return response
 
 
-
-#https://www.digitalocean.com/community/tutorials/processing-incoming-request-data-in-flask
 @app.route("/api/add_deporte_usuario", methods = ["POST", "GET"])
 #@cross_origin()
 def add_deporte_usuario():
