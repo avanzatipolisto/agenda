@@ -60,7 +60,19 @@ async function enviar_peticion_post(url, data) {
 */
 // Esta es la forma sin utilizar axios
 async function enviar_peticion_post(url, data) {
-   axios.post(url, data, {headers: {'Access-Control-Allow-Origin': 'https://agenda-yk23.onrender.com'}})
+    const config = {
+        url: url,
+        method: 'POST',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'origin':'x-requested-with',
+            'Access-Control-Allow-Headers': 'POST, GET, PUT, DELETE, OPTIONS, HEAD, Authorization, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin',
+            'Content-Type': 'application/json',
+        },
+        data: data,
+    };
+   //axios.post(url, data, {headers: {'Access-Control-Allow-Origin': 'https://agenda-yk23.onrender.com'}})
+   axios.post(config)
     .then(response => {
         console.log("Actualizado con mínimo:", response.data);
         document.location.reload();
@@ -125,8 +137,20 @@ async function marcar_checkbox_deportes_asignados_usuario () {
     const deportes_usuario = {
         nombre_usuario: nombre_usuario
     };
+    const config = {
+        url: ruta_base + "api/obtener_deportes_usuario",
+        method: 'POST',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'origin':'x-requested-with',
+            'Access-Control-Allow-Headers': 'POST, GET, PUT, DELETE, OPTIONS, HEAD, Authorization, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin',
+            'Content-Type': 'application/json',
+        },
+        data: JSON.stringify({nombre_usuario: nombre_usuario}),
+    };
     //Obtenemos todos los deportes de un usuario
-    axios.post(ruta_base + "api/obtener_deportes_usuario", deportes_usuario, {headers: {'Access-Control-Allow-Origin': 'https://agenda-yk23.onrender.com'}})
+    //axios.post(ruta_base + "api/obtener_deportes_usuario", deportes_usuario, {headers: {'Access-Control-Allow-Origin': 'https://agenda-yk23.onrender.com'}})
+    axios.post(config)
     //Con axios trabajamos con promesas
     .then(response => {
         console.log("obtenidos los deportes de un usuario:", response.data);
