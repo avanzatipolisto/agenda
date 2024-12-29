@@ -73,6 +73,45 @@ También para que funciene hay que cambiar en authentication users de workbench,
 <img src="docs/readme2.png" width="400px"></img>
 
 
+## Desplegando tu proyecto en render
+
+Tienes que tener una cuenta en github y un repositorio con tu proyecto creado
+
+En tu proyecto flask Python tienes que crear el archivo requirements.txt xon el comando “pip freeze > requirements.txt”
+
+Vamos a https://render.com
+
+
+Después de logearte, en el menú principal de render pinchamos en +Add new y pinchamos en Web service
+
+<img src="docs/readme8.png" width="500px"></img>
+ 
+
+Elegimos un repositorio de git público y el proyecto o como en mi caso como tengo render enlazado a mi cuenta de github selecciono Git provider (1) y el proyecto que quiero enlanzar (2), pinchamos en Connect (3):
+ 
+<img src="docs/readme9.png" width="500px"></img>
+
+En lenguaje cambiamos de Docker a Python 3:
+
+<img src="docs/readme10.png" width="500px"></img>
+
+En Start command lo cambiamos a Python main.py y en Instance type seleccionamos Free:
+ 
+<img src="docs/readme11.png" width="500px"></img>
+
+Pinchamos en Deploy web service:
+ 
+<img src="docs/readme12.png" width="500px"></img>
+
+## Problemas que me he encontrado al desplegar
+
+Render me cambia el nombre de los directorios cuando trabajo con Docker, si es tu caso métete en local en modo interactivo y mira los nombres de los directorios.
+Render dá rechaza las conexiones, para esto tienes que trabajar con el móduclo de flask-cors.
+
+
+
+
+
 
 
 
