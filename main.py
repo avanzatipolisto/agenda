@@ -348,7 +348,7 @@ def api_mostrar_todos():
         print(deporte)
         deportes.append(deporte[1])
     response=jsonify(deportes)
-    response.headers.add('Access-Control-Allow-Origin', ruta_base)
+    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 
@@ -372,7 +372,7 @@ def add_deporte_usuario():
 
     #print("El deportes_usuario es: ", deportes_usuario)
     response=jsonify(deportes_usuario)
-    response.headers.add('Access-Control-Allow-Origin', ruta_base)
+    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 @app.route("/api/delete_deporte_usuario", methods = ["POST", "GET"])
@@ -394,7 +394,7 @@ def delete_deporte_usuario():
     deportes_usuario= database.obtener_deportes_usuario_por_id_usuario(id_usuario)
 
     response=jsonify(deportes_usuario)
-    response.headers.add('Access-Control-Allow-Origin', ruta_base)
+    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 @app.route("/api/obtener_deportes_usuario", methods = ["POST", "GET"])
@@ -410,7 +410,7 @@ def obtener_deportes_usuario():
     deportes_usuario=database.obtener_todos_los_deportes_por_nombre_de_usuario(nombre_usuario)
 
     response=jsonify(deportes_usuario)
-    response.headers.add('Access-Control-Allow-Origin', ruta_base)
+    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 
