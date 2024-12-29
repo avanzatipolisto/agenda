@@ -23,7 +23,7 @@ class SqliteClient:
             self.create_table_dia_prohibido()
             self.add_fake_users()
             self.add_fake_deportes()
-            #self.add_fake_deportes_usuarios()
+            self.add_fake_deportes_usuarios()
             #self.add_fake_dias_prohibidos()
 
     def close(self):
@@ -133,8 +133,7 @@ class SqliteClient:
     def add_fake_deportes_usuarios(self):
         self.cursor.executemany("insert into deportes_usuario (`id_deporte`, `id_usuario`) values (?,?);",
             [
-                (1,2),
-                (2,3)
+                (1,3)
             ]
         )
         self.connection.commit()
