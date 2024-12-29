@@ -1,6 +1,6 @@
 ruta_base = "http://127.0.0.1:3000/";
 //ruta_base = "https://agenda-yk23.onrender.com:3000/";
-//ruta_base = "https://agenda-alpha-gold.vercel.app:3000/";
+
 window.onload = function () {
     // Ocultamos los checkbox pagados si no está marcado el activado
     // Enl marcado de los checkbox asistenca es lo 1 que se ha hecho en php
@@ -13,7 +13,6 @@ window.onload = function () {
  2 COn la aAPI fecth. con el objeto https://developer.mozilla.org/es/docs/Web/API/fetch
  3 Utilizando una librería externa, en nuestro caso utilizamos axios: https://axios-http.com/docs/intro, axios trabaja con promesas o .then(reponse...)
  */
-
 
 
 function checkbox_deporte_click(checkbox) {
