@@ -13,7 +13,7 @@ ruta_base = "https://agenda-mvlr.onrender.com"
 # singleton para poder usarlas en otros archivos
 app = MainFlask.getFlask()
 CORS(app)
-cors = CORS(app, resources={r"/api/*": {"origins": "https://agenda-mvlr.onrender.com/"}})
+#cors = CORS(app, resources={r"/api/*": {"origins": "https://agenda-mvlr.onrender.com/"}})
 database:Database= MainFlask.get_database()
 
 # Puedes utilizar la base de datos de tipo mysql con la siguiente instrucción
@@ -440,7 +440,8 @@ def obtener_deportes_usuario():
 #####################################################################
 # Start the Server
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=3000, debug=True)
+    #app.run(host="0.0.0.0", port=3000, debug=True)
+    app.run(host="0.0.0.0", port=3000)
     #app.run(debug=True)
 
 
