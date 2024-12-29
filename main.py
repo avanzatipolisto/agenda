@@ -6,7 +6,6 @@ from routesManager import *
 import calendar
 import datetime
 from utils.utils import *
-#
 #pip install -U flask-cors: https://flask-cors.readthedocs.io/en/latest/
 #from flask_cors import CORS, cross_origin
 
@@ -257,7 +256,7 @@ def form_logout():
 #####################################################################
 @app.route("/menu_usuario")
 @app.route("/menu_usuario/<int:anio_actual>/<int:mes_actual>")
-@cross_origin()
+#@cross_origin()
 def menu_usuario(anio_actual=-1, mes_actual=-1):
 #def menu_usuario():
     if "nombre" not in session:
