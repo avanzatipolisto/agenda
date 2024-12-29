@@ -60,7 +60,7 @@ async function enviar_peticion_post(url, data) {
 */
 // Esta es la forma sin utilizar axios
 async function enviar_peticion_post(url, data) {
-   axios.post(url, data)
+   axios.post(url, data, {headers: {'Access-Control-Allow-Origin': '${ruta_base}'}})
     .then(response => {
         console.log("Actualizado con mínimo:", response.data);
         document.location.reload();
@@ -126,7 +126,7 @@ async function marcar_checkbox_deportes_asignados_usuario () {
         nombre_usuario: nombre_usuario
     };
     //Obtenemos todos los deportes de un usuario
-    axios.post(ruta_base + "api/obtener_deportes_usuario", deportes_usuario)
+    axios.post(ruta_base + "api/obtener_deportes_usuario", deportes_usuario, {headers: {'Access-Control-Allow-Origin': '${ruta_base}'}})
     //Con axios trabajamos con promesas
     .then(response => {
         console.log("obtenidos los deportes de un usuario:", response.data);
