@@ -59,14 +59,19 @@ async function marcar_checkbox_deportes_asignados_usuario () {
 
     //Obtenemos todos los deportes de un usuario
     try {
-        const response = await fetch(ruta_base + "api/obtener_deportes_usuario/?nombre_usuario="+nombre_usuario, {
-            method: "GET", // Cambia a "PUT" si tu API lo requiere
+        //a través de post    
+        /*
+        const response = await fetch(ruta_base + "api/obtener_deportes_usuario", {
+            method: "POST", // Cambia a "PUT" si tu API lo requiere
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify(deportes_usuario), // Convierte el objeto a una cadena JSON
         });
+        */
+       //A través de GET
+        const response = await fetch(ruta_base + "api/obtener_deportes_usuario?nombre_usuario="+nombre_usuario);
         // Verifica si la respuesta fue exitosa
         if (response.ok) {
             const results = await response.json(); // Convierte la respuesta a JSON            

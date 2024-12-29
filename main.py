@@ -357,9 +357,15 @@ def api_mostrar_todos():
 @app.route("/api/add_deporte_usuario", methods = ["POST"])
 #@cross_origin()
 def add_deporte_usuario():
-    request_data = request.get_json()
-    nombre_usuario = request_data['nombre_usuario']
-    nombre_deporte = request_data['nombre_deporte']
+
+    if request.method == "POST":
+        request_data = request.get_json()
+        nombre_usuario = request_data['nombre_usuario']
+        nombre_deporte = request_data['nombre_deporte']
+    elif request.method == "GET":
+        request_data = request.args
+        nombre_usuario = request_data['nombre_usuario']
+        nombre_deporte = request_data['nombre_deporte']
 
     id_usuario=database.obtener_el_id_usuario_a_partir_del_nombre_usuario(nombre_usuario)
     id_deporte=database.obtener_el_id_deporte_a_partir_del_nombre_deporte(nombre_deporte)
@@ -374,9 +380,15 @@ def add_deporte_usuario():
 @app.route("/api/delete_deporte_usuario", methods = ["POST"])
 #@cross_origin()
 def delete_deporte_usuario():
-    request_data = request.get_json()
-    nombre_usuario = request_data['nombre_usuario']
-    nombre_deporte = request_data['nombre_deporte']
+
+    if request.method == "POST":
+        request_data = request.get_json()
+        nombre_usuario = request_data['nombre_usuario']
+        nombre_deporte = request_data['nombre_deporte']
+    elif request.method == "GET":
+        request_data = request.args
+        nombre_usuario = request_data['nombre_usuario']
+        nombre_deporte = request_data['nombre_deporte']
 
     id_usuario=database.obtener_el_id_usuario_a_partir_del_nombre_usuario(nombre_usuario)
     id_deporte=database.obtener_el_id_deporte_a_partir_del_nombre_deporte(nombre_deporte)
