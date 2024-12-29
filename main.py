@@ -8,12 +8,12 @@ import datetime
 from utils.utils import *
 #pip install -U flask-cors: https://flask-cors.readthedocs.io/en/latest/
 from flask_cors import CORS, cross_origin
-ruta_base = "https://agenda-yk23.onrender.com"
+ruta_base = "https://agenda-mvlr.onrender.com"
 # La app y la base de datos está inicializada en una clase de tipo 
 # singleton para poder usarlas en otros archivos
 app = MainFlask.getFlask()
 CORS(app)
-#cors = CORS(app, resources={r"/api/*": {"origins": "https://agenda-yk23.onrender.com/"}})
+#cors = CORS(app, resources={r"/api/*": {"origins": "https://agenda-mvlr.onrender.com/"}})
 database:Database= MainFlask.get_database()
 
 # Puedes utilizar la base de datos de tipo mysql con la siguiente instrucción
