@@ -8,7 +8,7 @@ import datetime
 from utils.utils import *
 #pip install -U flask-cors: https://flask-cors.readthedocs.io/en/latest/
 from flask_cors import CORS, cross_origin
-ruta_base = "https://agenda-yk23.onrender.com:3000/"
+ruta_base = "https://agenda-yk23.onrender.com"
 # La app y la base de datos está inicializada en una clase de tipo 
 # singleton para poder usarlas en otros archivos
 app = MainFlask.getFlask()
