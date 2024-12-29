@@ -12,7 +12,7 @@ from flask_cors import CORS, cross_origin
 # La app y la base de datos está inicializada en una clase de tipo 
 # singleton para poder usarlas en otros archivos
 app = MainFlask.getFlask()
-CORS(app)
+#CORS(app)
 #cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 database:Database= MainFlask.get_database()
 
@@ -256,7 +256,7 @@ def form_logout():
 #####################################################################
 @app.route("/menu_usuario")
 @app.route("/menu_usuario/<int:anio_actual>/<int:mes_actual>")
-#@cross_origin()
+@cross_origin()
 def menu_usuario(anio_actual=-1, mes_actual=-1):
 #def menu_usuario():
     if "nombre" not in session:
@@ -355,7 +355,7 @@ def api_mostrar_todos():
 
 #https://www.digitalocean.com/community/tutorials/processing-incoming-request-data-in-flask
 @app.route("/api/add_deporte_usuario", methods = ["POST"])
-@cross_origin()
+#@cross_origin()
 def add_deporte_usuario():
 
     if request.method == "POST":
